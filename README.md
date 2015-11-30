@@ -50,7 +50,7 @@ protected function onAdReceived(event:UnityAdsEvent):void
     </android>
 ```
 
-contact:wohaosea@gmail.com
+contact:wohaosea@gmail.com<br/>
 related lib: https://github.com/lilili87222/as3-air-ad-network-framework<br/>
-project home:https://github.com/lilili87222/admob-for-flash/ <br />
+project home:https://github.com/lilili87222/Unity-ANE<br />
 UnityAds home:https://unityads.unity3d.com<br />
