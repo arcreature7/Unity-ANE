@@ -37,18 +37,13 @@ package
 			var ui:UI=new UI(onClick);
 			addChild(ui);
 			ui.addButton("video", 20, 120);
-			ui.addButton("rewardVideo", 200, 120);
 		}
 
 		private function onClick(label:String):void
 		{
 			trace("click label:",label,u3d.isVideoReady());
-		 	if(label=="rewardVideo"){
-				if(u3d.isVideoReady()){
-					u3d.showRewardVideo();
-				}
-			}
-			else if(label=="video"){
+		 	
+			 if(label=="video"){
 				if(u3d.isVideoReady()){
 					u3d.showVideo();
 				}
