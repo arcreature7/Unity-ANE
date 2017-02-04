@@ -48,20 +48,7 @@ if(UnityAds.getInstance().isVideoReady()){
     </android>
 ```
 
-IOS Http May Need
-```
-    <iPhone>
-        <InfoAdditions><![CDATA[
-			<key>UIDeviceFamily</key>
-			<array>
-				<string>1</string>
-				<string>2</string>
-			</array>
-			
-		]]></InfoAdditions>
-        <requestedDisplayResolution>high</requestedDisplayResolution>
-    </iPhone>
-```
+
 
 
 
