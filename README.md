@@ -3,8 +3,8 @@ UnityAds ANE for flash
 UnityAds ane for flash air mobile app ,witch enable as3 developer integrate Unity video Ad and rewarded video in their ios and android apps <br/>
 flex and actionscript can show u3d ad with the same code in ios and android apps<br/>
 all Unity Ads native event is supported<br/>
-base on UnityAd 2.0<br/>
-requred  air sdk 22.0 or later <br/>
+base on UnityAd 2.1<br/>
+requred  air sdk 25.0 or later <br/>
 
 very easy to use ,just 3 line code to integrate unity ads to air app<br/>
 
@@ -31,17 +31,29 @@ if(UnityAds.getInstance().isVideoReady()){
 			    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 			     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 			     <application>
-   <activity
+   
+
+<activity
             android:name="com.unity3d.ads.adunit.AdUnitActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:hardwareAccelerated="true" />
-
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.unity3d.ads.adunit.AdUnitTransparentActivity"
+            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.unity3d.ads.adunit.AdUnitTransparentSoftwareActivity"
+            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+            android:hardwareAccelerated="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
         <activity
             android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:hardwareAccelerated="false" />
+            android:hardwareAccelerated="false"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
 			     </application>
 			</manifest>
 		]]></manifestAdditions>
