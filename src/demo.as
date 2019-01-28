@@ -27,8 +27,19 @@ package
 				}else{
 					u3d.setUnityKeys("unity game id for android");
 				}
-				u3d.addEventListener(UnityAdsEvent.onLoadVideoSuccess, onAdReceived);
+				u3d.addEventListener(UnityAdsEvent.onVideoLoadedSuccess, onAdReceived);
+				u3d.addEventListener(UnityAdsEvent.onUnityServicesError, onAdReceivedFail);
+				u3d.addEventListener(UnityAdsEvent.onUnityBannerError, onAdReceivedFail);
+				u3d.addEventListener(UnityAdsEvent.onVideoStateChange, onAdReceivedFail);
+			}else{
+				trace("not support device");
 			}
+		}
+		
+		protected function onAdReceivedFail(event:UnityAdsEvent):void
+		{
+			// TODO Auto-generated method stub
+			trace(event.data,event.type);
 		}
 		
 		private function initUI():void
@@ -37,6 +48,7 @@ package
 			var ui:UI=new UI(onClick);
 			addChild(ui);
 			ui.addButton("video", 20, 120);
+			ui.addButton("banner", 200, 120);
 		}
 
 		private function onClick(label:String):void
@@ -48,11 +60,14 @@ package
 					u3d.showVideo();
 				}
 			}
+			 if(label=="banner"){
+				 u3d.showBanner("banner");
+			 }
 		}
 
 		protected function onAdReceived(event:UnityAdsEvent):void
 		{
-			u3d.showVideo();
+//			u3d.showVideo();
 		}
 	}
 }
